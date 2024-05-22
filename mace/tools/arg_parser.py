@@ -61,7 +61,7 @@ def build_default_arg_parser() -> argparse.ArgumentParser:
         "--default_dtype",
         help="set default dtype",
         type=str,
-        choices=["float32", "float64"],
+        choices=["float16a", "float16b", "float32", "float64"],
         default="float64",
     )
     parser.add_argument(
