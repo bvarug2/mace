@@ -158,6 +158,10 @@ class MACECalculator(Calculator):
                 self.models = [model.double() for model in self.models]
             elif default_dtype == "float32":
                 self.models = [model.float() for model in self.models]
+            elif default_dtype == "float16b":
+                self.models = [model.bfloat16() for model in self.models]
+            elif default_dtype == "float16a":
+                self.models = [model.half() for model in self.models]
         torch_tools.set_default_dtype(default_dtype)
         for model in self.models:
             for param in model.parameters():
